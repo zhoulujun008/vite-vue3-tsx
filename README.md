@@ -1,4 +1,9 @@
-# Vite + Vue 3 + Typescript + tsx + less + router + vuex + elementplus 教程示范demo
+
+项目fork自：https://github.com/cangshudada/vite-vue3-tsx
+
+在此基础上的修改版本
+
+# Vite + Vue 3 + Typescript + tsx + less + router + vuex + magicbox3.x 教程示范demo
 
 > 本文为作者尝试使用vite结合vue3和tsx一步步完成todo list示范demo的心路历程整理，希望能给初学者相关踩坑指引
 
@@ -46,7 +51,7 @@
 
 ### 涉及到的主要依赖：
 
-1. `vue@^3.0.5`
+1. `vue@^3.2.x`
 2. `vite@^2.3.5`
 3. `vue-router@4.0.8`
 4. `vuex@4.0.1`
@@ -138,6 +143,20 @@ $ yarn create @vitejs/app
 
 
 ### 项目改造
+
+#### 快速接入eslint
+依赖[@blueking/eslint-config-bk](https://www.npmjs.com/package/@blueking/eslint-config-bk) 一键接入eslint
+```bash
+npm i @blueking/eslint-config-bk
+```
+在项目根目录新建 .eslintrc.js，配置如下
+```javascript
+module.exports = {
+  root: true,
+  extends: ['@blueking/eslint-config-bk/tsvue3'],
+};
+```
+***注意：*** 删除package.json里面eslint相关的包（如果之前安装的话)
 
 #### 配置eslint
 
@@ -372,10 +391,10 @@ export default defineConfig({
 
 
 
-#### less配置
+#### less/sass配置
 
 Vite 提供了对 `.scss`, `.sass`, `.less`, `.styl` 和 `.stylus` 文件的内置支持。因此没有必要为它们安装特定的 Vite 插件，但必须安装相应的预处理器依赖，依赖安装完项目就可以直接解析less文件了。
-
+##### less配置
 ```bash
 $ npm install less less-loader -D
 # or
@@ -384,7 +403,30 @@ $ yarn add less less-loader -D
 
 > 注意这里有个坑，less 和 less-loader 需要写到 devDependencies 里面，否则运行会报错。
 
+##### sass配置
+```bash
+$ npm install sass sass-loader -D
+# or
+$ yarn add sass sass-loader -D
+```
 
+> 注意这里有个坑，less 和 less-loader 需要写到 devDependencies 里面，否则运行会报错。
+
+
+##### sass全局变量配置
+```javascript
+{
+    css: {
+        /* CSS 预处理器 */
+        preprocessorOptions: {
+            scss: {
+                additionalData: '@import "src/style/variables.scss";'
+            }
+        }
+    }
+}
+
+```
 
 #### router配置
 

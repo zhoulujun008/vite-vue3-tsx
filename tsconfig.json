@@ -8,11 +8,35 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
-    },
+      "@/*": [
+        "*"
+      ]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "plugins",
+    "env.js",
+    "babel.config.js",
+    "bk.config.js",
+    ".eslintrc.js",
+    "webpack.config.js",
+    "src/components/vue-grid-layout",
+    "src/components/monaco",
+    "src/utils/login.js",
+    "test"
+  ]
 }
