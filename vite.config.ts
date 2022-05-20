@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-
+import styleImport from "vite-plugin-style-import";
 // https://vitejs.dev/config/
 export default ({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
@@ -10,6 +10,21 @@ export default ({ mode }) => {
         plugins: [
             vue(),
             vueJsx(),
+            styleImport({
+                libs: [
+                    {
+                        libraryName: "bkui-vue",
+                        esModule: true,
+                        ensureStyleFile: true,
+                        resolveStyle: (name:string) => {
+                            return `bkui-vue/lib/${name}/${name}.css`;
+                        },
+                        resolveComponent: (name:string) => {
+                            return `bkui-vue/lib/${name}/${name}`;
+                        },
+                    },
+                ],
+            }),
         ],
         base: mode === 'development' ? '/' : './',
         server: {

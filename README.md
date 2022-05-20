@@ -17,9 +17,10 @@
 - [x] vite脚手架配置
 - [x] tsx开发模式
 - [x] less
+- [x] sass
 - [x] router
 - [x] vuex
-- [x] Element-plus
+- [x] magicBox3
 
 上述功能再结合axios我认为大部分小项目需求都足以胜任，如果有有兴趣的同学欢迎fork代码体验一番,也欢迎各位提交issue交流。
 
@@ -140,7 +141,7 @@ $ yarn create @vitejs/app
 
 由上面目录结构可以看到vite脚手架构建的项目目录结构还是很清晰的，装完依赖之后运行 `yarn dev`则可以看到跑起来的项目是怎样的了。当然这样的配置远不是我们需要的，所以从这里开始要进行改造了。
 
-
+具体参看：[https://cn.vitejs.dev/guide/](https://cn.vitejs.dev/guide/)
 
 ### 项目改造
 
@@ -158,7 +159,7 @@ module.exports = {
 ```
 ***注意：*** 删除package.json里面eslint相关的包（如果之前安装的话)
 
-#### 配置eslint
+#### 手工配置eslint
 
 增加eslint用来规范`Typescript`以及`vue`代码，首先安装相关依赖：
 
@@ -389,7 +390,7 @@ export default defineConfig({
 }
 ```
 
-
+具体参看:[https://cn.vitejs.dev/config/](https://cn.vitejs.dev/config/)
 
 #### less/sass配置
 

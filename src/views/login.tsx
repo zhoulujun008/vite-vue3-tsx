@@ -4,117 +4,117 @@ import { useRouter } from 'vue-router'
 import { SET_USER } from '@/store/login/actionType'
 import { defineComponent, ref, reactive, onMounted } from 'vue'
 import {
-  ElForm,
-  ElInput,
-  ElButton,
-  ElMessage,
-  ElTooltip,
-  ElFormItem,
-  ElNotification
-} from 'element-plus'
+    Form,
+    Input,
+    Button,
+    Message,
+    bkTooltips,
+    Notify,
+} from 'bkui-vue'
 
+import { BkFormItem } from 'bkui-vue/lib/form';
+
+const { BkForm, ComposeFormItem } = Form
 export default defineComponent({
-  setup() {
-    const data = reactive<{
-      user: IUser
-    }>({
-      user: {
-        name: '',
-        password: ''
-      }
-    })
-    const loginForm = ref<typeof ElForm | null>(null)
-    const { dispatch } = useStore()
-    const router = useRouter()
-
-    onMounted(() => {
-      ElNotification({
-        type: 'info',
-        title: '账户信息',
-        dangerouslyUseHTMLString: true,
-        message: '账号：<strong>admin</strong>  密码：<strong>123456</strong>'
-      })
-    })
-
-    function login() {
-      if (!loginForm.value) return
-      loginForm.value.validate((valid: boolean) => {
-        if (valid) {
-          if (data.user.name === 'admin' && data.user.password === '123456') {
-            router.push({
-              name: 'home'
-            })
-
-            localStorage.setItem('user', JSON.stringify(data.user))
-            dispatch(`login/${SET_USER}`, data.user)
-          } else {
-            data.user = {
-              name: '',
-              password: ''
+    setup() {
+        const data = reactive<{
+            user: IUser
+        }>({
+            user: {
+                name: '',
+                password: ''
             }
+        })
+        const loginForm = ref<typeof BkForm | null>(null)
+        const { dispatch } = useStore()
+        const router = useRouter()
 
-            localStorage.removeItem('user')
-            ElMessage.error('用户名或密码错误')
-          }
-        } else {
-          return false
+        onMounted(() => {
+            Notify({
+                type: 'info',
+                title: '账户信息',
+                dangerouslyUseHTMLString: true,
+                message: '账号：<strong>admin</strong>  密码：<strong>123456</strong>'
+            })
+        })
+
+        function login() {
+            if (!loginForm.value) return
+            loginForm.value.validate((valid: boolean) => {
+                if (valid) {
+                    if (data.user.name === 'admin' && data.user.password === '123456') {
+                        router.push({
+                            name: 'home'
+                        })
+
+                        localStorage.setItem('user', JSON.stringify(data.user))
+                        dispatch(`login/${SET_USER}`, data.user)
+                    } else {
+                        data.user = {
+                            name: '',
+                            password: ''
+                        }
+
+                        localStorage.removeItem('user')
+                        Message({ message: '用户名或密码错误', theme: 'error' })
+                    }
+                } else {
+                    return false
+                }
+            })
         }
-      })
-    }
 
-    function keyUp({ code }: KeyboardEvent) {
-      if (code === 'Enter') {
-        login()
-      }
-    }
+        function keyUp({ code }: KeyboardEvent) {
+            if (code === 'Enter') {
+                login()
+            }
+        }
 
-    return () => (
-      <ElForm model={data.user} ref={loginForm}>
-        <ElFormItem
-          label="账号"
-          prop="name"
-          rules={[{ required: true, message: '请输入用户名', trigger: 'blur' }]}
-        >
-          <ElInput
-            placeholder="请输入用户名"
-            v-model={data.user.name}
-            v-slots={{
-              prefix: <i class="el-input__icon el-icon-user"></i>
-            }}
-            {...{
-              onKeyup: keyUp
-            }}
-          ></ElInput>
-        </ElFormItem>
-        <ElFormItem
-          label="密码"
-          prop="password"
-          rules={[{ required: true, message: '请输入密码', trigger: 'blur' }]}
-        >
-          <ElInput
-            placeholder="请输入密码"
-            v-model={data.user.password}
-            v-slots={{
-              prefix: <i class="el-input__icon el-icon-unlock"></i>
-            }}
-            {...{
-              onKeyup: keyUp
-            }}
-          ></ElInput>
-        </ElFormItem>
-        <ElFormItem class="login-button">
-          <ElTooltip placement="top" content="账号：admin 密码：123456">
-            <ElButton
-              type="primary"
-              {...{
-                onClick: login
-              }}
-            >
-              登陆
-            </ElButton>
-          </ElTooltip>
-        </ElFormItem>
-      </ElForm>
-    )
-  }
+        return () => (
+            <BkForm model={data.user} ref={loginForm}>
+                <BkFormItem
+                    label='账号'
+                    property='name'
+                    rules={[{ required: true, message: '请输入用户名', trigger: 'blur' }]}
+                >
+                    <Input
+                        placeholder='请输入用户名'
+                        v-model={data.user.name}
+                        v-slots={{
+                            prefix: <span>22</span>
+                        }}
+                        {...{
+                            onKeyup: keyUp
+                        }}
+                    />
+                </BkFormItem>
+                <BkFormItem
+                    label='密码'
+                    property='password'
+                    rules={[{ required: true, message: '请输入密码', trigger: 'blur' }]}
+                >
+                    <Input
+                        placeholder='请输入密码'
+                        v-model={data.user.password}
+                        v-slots={{
+                            prefix: (<span class='input-icon'><search/></span>)
+                        }}
+                        {...{
+                            onKeyup: keyUp
+                        }}
+                    />
+                </BkFormItem>
+                <BkFormItem class='login-button'>
+                    <Button
+                        theme='primary'
+                        {...{
+                            onClick: login
+                        }}
+                    >
+                        登陆
+                    </Button>
+                </BkFormItem>
+            </BkForm>
+        )
+    }
 })
