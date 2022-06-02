@@ -49,3 +49,41 @@
   border: 1px solid $color-light-border;
 }
 
+.mt0 {
+  margin-top: 0 !important;
+}
+
+@for $i from 1 through 6 {
+  $m: $i*5;
+  $n: $m*1;
+  .m#{$m} {
+    margin: #{$n}px;
+  }
+  .ml#{$m} {
+    margin-left: #{$n}px;
+  }
+  .mr#{$m} {
+    margin-right: #{$n}px;
+  }
+  .mt#{$m} {
+    margin-top: #{$n}px;
+  }
+  .mb#{$m} {
+    margin-bottom: #{$n}px;
+  }
+  .p#{$m} {
+    padding: #{$n}px;
+  }
+  .pl#{$m} {
+    padding-left: #{$n}px;
+  }
+  .pr#{$m} {
+    padding-right: #{$n}px;
+  }
+  .pt#{$m} {
+    padding-top: #{$n}px;
+  }
+  .pb#{$m} {
+    padding-bottom: #{$n}px;
+  }
+}

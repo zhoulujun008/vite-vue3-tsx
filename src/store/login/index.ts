@@ -1,7 +1,7 @@
-import { Module } from 'vuex'
-import { SET_USER } from './actionType'
+import { Module } from 'vuex';
+import { SET_USER } from './actionType';
 
-export type IUser = Record<'name' | 'password', string>
+export type IUser = Record<'name' | 'password', string>;
 
 export interface ILoginState {
   user: IUser
@@ -12,19 +12,19 @@ const LoginStore: Module<ILoginState, Record<string, unknown>> = {
   state: {
     user: {
       name: '',
-      password: ''
-    }
+      password: '',
+    },
   },
   mutations: {
     [SET_USER](state, payload: IUser) {
-      state.user = payload
-    }
+      state.user = payload;
+    },
   },
   actions: {
     [SET_USER]({ commit }, payload: IUser) {
-      commit(SET_USER, payload)
-    }
-  }
-}
+      commit(SET_USER, payload);
+    },
+  },
+};
 
-export default LoginStore
+export default LoginStore;

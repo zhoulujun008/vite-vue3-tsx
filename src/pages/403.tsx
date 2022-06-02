@@ -1,10 +1,10 @@
-import { defineComponent } from 'vue'
-import { useRouter } from 'vue-router'
+import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 
-import {Exception,Button} from 'bkui-vue'
+import { Exception, Button } from 'bkui-vue';
 export default defineComponent({
   setup() {
-    const router = useRouter()
+    const router = useRouter();
 
     return () => (
      <div>
@@ -14,9 +14,9 @@ export default defineComponent({
                <Button
                    theme="primary"
                    {...{
-                       onClick: () => {
-                           router.push({ name: 'login' })
-                       }
+                     onClick: () => {
+                       router.push({ name: 'login' });
+                     },
                    }}
                >
                    返回首页
@@ -24,6 +24,6 @@ export default defineComponent({
            </div>
        </Exception>
      </div>
-    )
-  }
-})
+    );
+  },
+});

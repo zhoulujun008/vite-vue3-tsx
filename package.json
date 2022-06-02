@@ -1,5 +1,19 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "private": true,
+  "description": "bk-vision",
+  "keywords": [
+    "bk-vision",
+    "可视化平台"
+  ],
+  "engines": {
+    "node": "^v16.15.0",
+    "npm": "^8.5.5"
+  },
+  "main": "dist/main.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite --host=dev.bkapps.oa.com --port=9003",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
@@ -8,7 +22,7 @@
     "lint:fix": "eslint src --fix --ext .ts,.tsx"
   },
   "dependencies": {
-    "bkui-vue": "0.0.1-beta.65",
+    "bkui-vue": "0.0.1-beta.92",
     "vue": "^3.2.33",
     "vue-router": "^4.0.15",
     "vuex": "^4.0.2"
