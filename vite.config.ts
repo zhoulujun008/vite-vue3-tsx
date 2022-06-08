@@ -53,13 +53,13 @@ export default ({ mode }) => {
         },
         resolve: {
             alias: {
-                '@': resolve(__dirname, '/src'),
-                '@static': resolve(__dirname, '/static'),
-                '@charts': resolve(__dirname, '/src/plugins/charts'),
-                '@dashboard': resolve(__dirname, '/src/plugins/dashboard'),
-                '@datasource': resolve(__dirname, '/src/plugins/datasource'),
-                '@modules': resolve(__dirname, '/src/store/modules'),
-                '@pages': resolve(__dirname, '/src/pages'),
+                '@': resolve(__dirname, './src'),
+                '@static': resolve(__dirname, './static'),
+                '@charts': resolve(__dirname, './src/plugins/charts'),
+                '@dashboard': resolve(__dirname, './src/plugins/dashboard'),
+                '@datasource': resolve(__dirname, './src/plugins/datasource'),
+                '@modules': resolve(__dirname, './src/store/modules'),
+                '@pages': resolve(__dirname, './src/pages'),
             }
         }
     })

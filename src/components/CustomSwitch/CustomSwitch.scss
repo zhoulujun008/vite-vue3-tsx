@@ -1,0 +1,20 @@
+.custom-switch {
+  width: fit-content;
+  display: flex;
+  box-sizing: border-box;
+  padding: 4px;
+  font-size: 12px;
+  min-width: 110px;
+  cursor: pointer;
+  line-height: 1;
+
+  .custom-switch {
+    &-button {
+      min-width: 51px;
+      padding: 5px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
