@@ -1,26 +1,14 @@
 import { defineComponent } from 'vue';
-import { useRouter } from 'vue-router';
-
-import { Exception, Button } from 'bkui-vue';
+import { Exception } from 'bkui-vue';
 export default defineComponent({
   setup() {
-    const router = useRouter();
-
     return () => (
      <div>
        <Exception  class="exception-wrap-item" type="403">
-           <span>功能建设中</span>
-           <div class="text-wrap">
-               <Button
-                   theme="primary"
-                   {...{
-                     onClick: () => {
-                       router.push({ name: 'login' });
-                     },
-                   }}
-               >
-                   返回首页
-               </Button>
+           <span>无业务权限</span>
+           <div class='text-subtitle'>你没有相应业务的访问权限，请前往申请相关业务权限</div>
+           <div class='text-wrap'>
+               <span class='text-btn'>请联系管理员添加</span>
            </div>
        </Exception>
      </div>

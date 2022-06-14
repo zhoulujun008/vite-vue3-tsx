@@ -1,22 +1,26 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noImplicitAny": false,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "sourceMap": true,
+    "pretty": true,
     "strict": true,
     "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": [
       "esnext",
       "dom"
     ],
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "*"
-      ]
+      "@/*": ["./src/*"]  // 这里需要配置
     }
   },
   "include": [

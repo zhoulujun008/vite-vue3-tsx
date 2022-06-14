@@ -339,6 +339,18 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
+"@floating-ui/core@^0.7.3":
+  "integrity" "sha512-buc8BXHmG9l82+OQXOFU3Kr2XQx9ys01U/Q9HMIrZ300iLc8HLMgh7dcCqgYzAzf4BkoQvDcXf5Y+CuEZ5JBYg=="
+  "resolved" "https://registry.npmjs.org/@floating-ui/core/-/core-0.7.3.tgz"
+  "version" "0.7.3"
+
+"@floating-ui/dom@~0.5.2":
+  "integrity" "sha512-vpjWB1uC7rajvgA58uzlJZgtWqrdDQLw+XVA3w63ZTmsWwRmVd0Gl5Dy9VMAViI9cP7hBWaJt23Jy3AVgVYnoQ=="
+  "resolved" "https://registry.npmjs.org/@floating-ui/dom/-/dom-0.5.3.tgz"
+  "version" "0.5.3"
+  dependencies:
+    "@floating-ui/core" "^0.7.3"
+
 "@humanwhocodes/config-array@^0.5.0":
   "integrity" "sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.5.0.tgz"
@@ -458,11 +470,6 @@
   dependencies:
     "remark" "^13.0.0"
     "unist-util-find-all-after" "^3.0.2"
-
-"@tencent/bk-icon-bk-vision2@^0.1.1":
-  "integrity" "sha512-bV1d+t703p8zZDCcXzh/gPz5FHpyxUO1mEwupZZmRelC3uwLEAjioHNjcMluOmeVgDu8FeuLh+tY3VEhgVgeow=="
-  "resolved" "https://mirrors.tencent.com/npm/@tencent/bk-icon-bk-vision2/-/@tencent/bk-icon-bk-vision2-0.1.1.tgz"
-  "version" "0.1.1"
 
 "@types/eslint-scope@^3.7.3":
   "integrity" "sha512-PB3ldyrcnAicT35TWPs5IcwKD8S333HMaa2VVv4+wdvebJkjWuW/xESoB8IwRcog8HYVYamb1g/R31Qv5Bx03g=="
@@ -1069,6 +1076,11 @@
   "resolved" "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   "version" "2.0.0"
 
+"asynckit@^0.4.0":
+  "integrity" "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
+  "resolved" "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
+  "version" "0.4.0"
+
 "autoprefixer@^9.8.6":
   "integrity" "sha512-eM9d/swFopRt5gdJ7jrpCwgvEMIayITpojhkkSMRsFHYuH5bkSQ4p/9qTEHtmNudUZh22Tehu7I6CxAW0IXTKA=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-9.8.8.tgz"
@@ -1081,6 +1093,14 @@
     "picocolors" "^0.2.1"
     "postcss" "^7.0.32"
     "postcss-value-parser" "^4.1.0"
+
+"axios@^0.27.2":
+  "integrity" "sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.27.2.tgz"
+  "version" "0.27.2"
+  dependencies:
+    "follow-redirects" "^1.14.9"
+    "form-data" "^4.0.0"
 
 "bail@^1.0.0":
   "integrity" "sha512-xFbRxM1tahm08yHBP16MMjVUAvDaBMD38zsM9EMAUN61omwLmKlOpB/Zku5QkjZ8TZ4vn53pj+t518cH0S03RQ=="
@@ -1102,11 +1122,12 @@
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   "version" "2.2.0"
 
-"bkui-vue@0.0.1-beta.92":
-  "integrity" "sha512-owhN8B/BW5sr8um1WMGWdShmiKbLIcTs6GJDloFOozmRh4bYbFFkWKZFPYk5n+8IgVDeG1GvAhS/AqEJzMoRpA=="
-  "resolved" "https://registry.npmjs.org/bkui-vue/-/bkui-vue-0.0.1-beta.92.tgz"
-  "version" "0.0.1-beta.92"
+"bkui-vue@^0.0.1-beta.106":
+  "integrity" "sha512-sNBAwOE26gOYEzunjjf87H79VWg/RzWWXdPBJSZfal0OCGuBV9DmnicqemVLxPFx+LNlT8bsSRMTHGQZ2wcsdg=="
+  "resolved" "https://registry.npmjs.org/bkui-vue/-/bkui-vue-0.0.1-beta.106.tgz"
+  "version" "0.0.1-beta.106"
   dependencies:
+    "@floating-ui/dom" "~0.5.2"
     "@popperjs/core" "~2.11.5"
     "date-fns" "~2.28.0"
     "js-calendar" "~1.2.3"
@@ -1328,6 +1349,13 @@
   "resolved" "http://mirrors.tencent.com/npm/color-name/-/color-name-1.1.3.tgz"
   "version" "1.1.3"
 
+"combined-stream@^1.0.8":
+  "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
+  "resolved" "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
+  "version" "1.0.8"
+  dependencies:
+    "delayed-stream" "~1.0.0"
+
 "commander@^2.20.0":
   "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
   "resolved" "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
@@ -1338,8 +1366,13 @@
   "resolved" "http://mirrors.tencent.com/npm/concat-map/-/concat-map-0.0.1.tgz"
   "version" "0.0.1"
 
+"consola@^2.15.3":
+  "integrity" "sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw=="
+  "resolved" "https://registry.npmjs.org/consola/-/consola-2.15.3.tgz"
+  "version" "2.15.3"
+
 "console@^0.7.2":
-  "integrity" "sha1-+aQzEkkpFZG3v5v/qOIFNW8gqfA= sha512-+JSDwGunA4MTEgAV/4VBKwUHonP8CzJ/6GIuwPi6acKFqFfHUdSGCm89ZxZ5FfGWdZfkdgAroy5bJ5FSeN/t4g=="
+  "integrity" "sha512-+JSDwGunA4MTEgAV/4VBKwUHonP8CzJ/6GIuwPi6acKFqFfHUdSGCm89ZxZ5FfGWdZfkdgAroy5bJ5FSeN/t4g=="
   "resolved" "https://registry.npmjs.org/console/-/console-0.7.2.tgz"
   "version" "0.7.2"
 
@@ -1454,6 +1487,11 @@
   dependencies:
     "has-property-descriptors" "^1.0.0"
     "object-keys" "^1.1.1"
+
+"delayed-stream@~1.0.0":
+  "integrity" "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
+  "resolved" "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
+  "version" "1.0.0"
 
 "dir-glob@^3.0.1":
   "integrity" "sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA=="
@@ -2132,6 +2170,20 @@
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.5.tgz"
   "version" "3.2.5"
 
+"follow-redirects@^1.14.9":
+  "integrity" "sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.1.tgz"
+  "version" "1.15.1"
+
+"form-data@^4.0.0":
+  "integrity" "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww=="
+  "resolved" "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "asynckit" "^0.4.0"
+    "combined-stream" "^1.0.8"
+    "mime-types" "^2.1.12"
+
 "fs-extra@^10.0.0":
   "integrity" "sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ=="
   "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz"
@@ -2649,6 +2701,11 @@
   "resolved" "https://registry.npmjs.org/js-calendar/-/js-calendar-1.2.3.tgz"
   "version" "1.2.3"
 
+"js-cookie@^3.0.1":
+  "integrity" "sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw=="
+  "resolved" "https://registry.npmjs.org/js-cookie/-/js-cookie-3.0.1.tgz"
+  "version" "3.0.1"
+
 "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "http://mirrors.tencent.com/npm/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -2941,7 +2998,7 @@
   "resolved" "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
   "version" "1.52.0"
 
-"mime-types@^2.1.27":
+"mime-types@^2.1.12", "mime-types@^2.1.27":
   "integrity" "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw=="
   "resolved" "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz"
   "version" "2.1.35"

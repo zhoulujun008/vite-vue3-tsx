@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-// import styleImport from "vite-plugin-style-import";
+import {createStyleImportPlugin} from 'vite-plugin-style-import';
 // https://vitejs.dev/config/
 export default ({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
@@ -10,26 +10,26 @@ export default ({ mode }) => {
         plugins: [
             vue(),
             vueJsx(),
-            /*styleImport({
+            createStyleImportPlugin({
                 libs: [
                     {
-                        libraryName: "bkui-vue",
+                        libraryName: 'bkui-vue',
                         esModule: true,
                         ensureStyleFile: true,
-                        resolveStyle: (name:string) => {
+                        resolveStyle: (name: string) => {
                             return `bkui-vue/lib/${name}/${name}.css`;
                         },
-                        resolveComponent: (name:string) => {
-                            return `bkui-vue/lib/${name}/${name}`;
-                        },
+                        // resolveComponent: (name: string) => {
+                        //     return `bkui-vue/lib/${name}/${name}`;
+                        // },
                     },
                 ],
-            }),*/
+            }),
         ],
         base: mode === 'development' ? '/' : './',
         server: {
             host: process.env.HOST,
-            port: Number(process.env.PORT||9000),
+            port: Number(process.env.PORT || 9000),
             proxy: {
                 '/api/': {
                     target: process.env.AJAX_URL_PREFIX,
@@ -53,13 +53,13 @@ export default ({ mode }) => {
         },
         resolve: {
             alias: {
-                '@': resolve(__dirname, '/src'),
-                '@static': resolve(__dirname, '/static'),
-                '@charts': resolve(__dirname, '/src/plugins/charts'),
-                '@dashboard': resolve(__dirname, '/src/plugins/dashboard'),
-                '@datasource': resolve(__dirname, '/src/plugins/datasource'),
-                '@modules': resolve(__dirname, '/src/store/modules'),
-                '@pages': resolve(__dirname, '/src/pages'),
+                '@': resolve(__dirname, './src'),
+                '@static': resolve(__dirname, './static'),
+                '@charts': resolve(__dirname, './src/plugins/charts'),
+                '@dashboard': resolve(__dirname, './src/plugins/dashboard'),
+                '@datasource': resolve(__dirname, './src/plugins/datasource'),
+                '@modules': resolve(__dirname, './src/store/modules'),
+                '@pages': resolve(__dirname, './src/pages'),
             }
         }
     })
