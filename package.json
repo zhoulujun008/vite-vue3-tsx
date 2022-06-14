@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite --host=dev.bkapps.oa.com --port=9003",
+    "dev": "vite --host=local.zhoulujun.net --port=9003",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "serve": "vite preview --port=9004",
     "lint": "eslint src",
