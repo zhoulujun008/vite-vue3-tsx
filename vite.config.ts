@@ -4,8 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import {createStyleImportPlugin} from 'vite-plugin-style-import';
 // https://vitejs.dev/config/
-export default ({ mode }) => {
-    process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+console.log(process.env.PORT)
+export default ({ command,mode }) => {
     return defineConfig({
         plugins: [
             vue(),
@@ -60,6 +60,11 @@ export default ({ mode }) => {
                 '@datasource': resolve(__dirname, './src/plugins/datasource'),
                 '@modules': resolve(__dirname, './src/store/modules'),
                 '@pages': resolve(__dirname, './src/pages'),
+            }
+        },
+        build:{
+            rollupOptions:{
+
             }
         }
     })

@@ -55,7 +55,10 @@ http.interceptors.request.use((_config: AxiosRequestConfig) => {
   }
   removePendingRequest(config); // 检查是否存在重复请求，若存在则取消已发的请求
   addPendingRequest(config); // 把当前请求添加到pendingRequest对象中
-  if (!['HEAD', 'OPTIONS', 'TRACE'].includes(config.method.toUpperCase())) {
+  if (!config.headers) {
+    config.headers = {};
+  }
+  if (!['HEAD', 'OPTIONS', 'TRACE'].includes(`${config.method}`.toUpperCase())) {
     config.headers['X-CSRFToken'] = jsCookies.get(window.csrf_cookie_name);
   }
   config.headers['X-Requested-With'] = 'XMLHttpRequest';
