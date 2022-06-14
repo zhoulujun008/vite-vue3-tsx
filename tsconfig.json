@@ -18,9 +18,15 @@
       "esnext",
       "dom"
     ],
-    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]  // 这里需要配置
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@static/*": ["./static/*"],
+      "@charts/*": ["./src/plugins/charts/*"],
+      "@datasource/*": ["./src/plugins/datasource/*"],
+      "@dashboard/*": ["./src/plugins/dashboard/*"],
+      "@modules/*": ["./src/store/modules/*"],
     }
   },
   "include": [
@@ -33,7 +39,7 @@
   "exclude": [
     "node_modules",
     "plugins",
-    "env.js",
+    "env.ts",
     "babel.config.js",
     "bk.config.js",
     ".eslintrc.js",
