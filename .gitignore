@@ -6,3 +6,6 @@ dist-ssr
 /.idea/
 .env.local
 .env.open
+test.js
+test.html
+Test.ts
