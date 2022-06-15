@@ -126,7 +126,7 @@ http.interceptors.response.use((res: AxiosResponse) => {
         break;
     }
     // Object.assign(error, );
-    const errorInfo = executeError({ message: `${msg}:\n${url}`, status });
+    const errorInfo = executeError({ message: `${msg}:\n${url}`, status } as any);
     return Promise.reject(errorInfo);
   }
 });
