@@ -29,14 +29,32 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
-    path: '/home',
+    path: '/:space_uid',
     name: 'home',
     meta: {
       type: 'home',
     },
     component: () => import('@/pages/home'),
     children: [
+      {
+        path: 'dashboards/detail',
+        name: 'dashboard',
+        component: () => import('@/pages/dashboard/index'),
+        meta: {
+          parent: 'dashboard',
+        },
+        children: [
+          {
+            path: ':folder_uid/:uid',
+            name: 'dashboard-preview',
+            component: () => import('@/pages/dashboard/dashboard'),
+            meta: {
+              parent: 'dashboard',
+            },
+          },
+        ],
 
+      },
     ],
   },
   {

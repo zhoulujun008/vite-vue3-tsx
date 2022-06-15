@@ -16,6 +16,7 @@ const i18n = createI18n({
   locale: getCookie('blueking_language') || 'zh-cn',
   fallbackLocale: 'zh-cn',
   silentTranslationWarn: true,
+  globalInjection: true,
   messages: {
     en: { ...englishJson },
     'zh-cn': { ...chineseJson },
