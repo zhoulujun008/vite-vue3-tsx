@@ -1,7 +1,7 @@
 /**
  * 变量管理
  */
-import { deepClone } from './utils';
+import { deepClone } from '@/utils/utils';
 import dayjs from 'dayjs';
 
 export const variableRegex = /\$(\w+)|\[\[([\s\S]+?)(?::(\w+))?\]\]|\${(\w+)(?:\.([^:^}]+))?(?::([^}]+))?}/g;
@@ -10,21 +10,8 @@ export type ScopedVars  = Record<string, any>;
 export class VariablesService {
   private index: ScopedVars;
   private regex = variableRegex;
-  constructor(variables?: ScopedVars) {
+  constructor(variables: ScopedVars = {}) {
     this.index = variables;
-  }
-  private getVariableAtIndex(name: string) {
-    if (!name) {
-      return;
-    }
-    return this.index[name];
-  }
-  private getVariableValue(variableName: string, scopedVars: ScopedVars) {
-    const scopedVar = scopedVars[variableName];
-    if (!scopedVar) {
-      return null;
-    }
-    return scopedVar;
   }
   public replace(target?: string, scopedVars?: ScopedVars): any {
     if (!target) {
@@ -43,9 +30,6 @@ export class VariablesService {
       return '';
     });
     return value;
-  }
-  hasVariables(input: any) {
-    return !!JSON.stringify(input).match(variableRegex);
   }
   /**
    * @description: 变量翻译
@@ -92,6 +76,22 @@ export class VariablesService {
     setVariables(newData);
     return newData;
   }
+  hasVariables(input: any) {
+    return !!JSON.stringify(input).match(variableRegex);
+  }
+  private getVariableAtIndex(name: string) {
+    if (!name) {
+      return;
+    }
+    return this.index[name];
+  }
+  private getVariableValue(variableName: string, scopedVars: ScopedVars) {
+    const scopedVar = scopedVars[variableName];
+    if (!scopedVar) {
+      return null;
+    }
+    return scopedVar;
+  }
 }
 
 
@@ -100,8 +100,8 @@ export class VariablesService {
  * @param {*} timeRange number | string | array
  */
 export const handleTimeRange = (timeRange: number | string | string[]): { startTime: number; endTime: number } => {
-  let startTime = null;
-  let endTime = null;
+  let startTime: string|number;
+  let endTime: string|number;
   if (typeof timeRange === 'number') {
     endTime = dayjs().unix();
     startTime = endTime - timeRange / 1000;

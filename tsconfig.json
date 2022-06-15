@@ -18,6 +18,9 @@
       "esnext",
       "dom"
     ],
+    "outDir": "dist",
+    "rootDir": "./",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
