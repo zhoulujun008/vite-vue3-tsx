@@ -1,6 +1,5 @@
 import { defineComponent } from 'vue';
 import { Exception } from 'bkui-vue';
-
 export default defineComponent({
   props: {
     type: String,
