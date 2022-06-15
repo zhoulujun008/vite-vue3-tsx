@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createStyleImportPlugin } from 'vite-plugin-style-import';
@@ -7,8 +7,6 @@ import config from './env'
 // https://vitejs.dev/config/
 console.log(process.env.PORT)
 export default ({ mode }) => {
-    process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
-    console.log(process.env.HOST, process.cwd())
     const env = config[mode]
     debugger
     return defineConfig({
