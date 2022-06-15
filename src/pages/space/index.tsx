@@ -57,7 +57,7 @@ export default defineComponent({
         sort: true,
       },
       {
-        label: (column, index) => `状态-${index}-${column.field}`,
+        label: (column: Record<string, string>, index: number) => `状态-${index}-${column.field}`,
         field: 'status',
         sort: true,
       },
