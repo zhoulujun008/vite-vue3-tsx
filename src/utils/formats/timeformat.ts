@@ -76,7 +76,7 @@ export const timeFormatMap: TimeFormat[] = [
   //   name: '自定义',
   // },
 ];
-export function getTimeFormat(duration) {
+export function getTimeFormat(duration: number) {
   if (duration < 60 * 60 * 24) {
     return 'HH:mm:ss';
   }

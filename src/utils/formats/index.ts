@@ -1,7 +1,7 @@
 import { getCategories } from './categories';
 import { ValueFormatCategory, UnitCustom } from './valueFormats';
 
-export function labelFormatter(value: any, unitStr?, isPercent = false) {
+export function labelFormatter(value: any, unitStr?: string, isPercent = false) {
   if (isPercent) {
     return `${value}%`;
   }

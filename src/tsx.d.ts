@@ -1,4 +1,3 @@
-// import $i18n from 'vue-i18n';
 
 export {}; // 必须保留
 declare global {

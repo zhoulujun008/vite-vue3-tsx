@@ -1,17 +1,17 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import Qs from 'qs';
-import jsCookies from 'js-cookie';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import Qs from 'querystring';
+import { getCookie } from '@/utils/utils';
 import { Message as $Message } from 'bkui-vue';
 
 
 const pendingRequest = new Map();
 
-function generateReqKey(config) {
+function generateReqKey(config: AxiosRequestConfig) {
   const { method, url, params, data } = config;
   return [method, url, Qs.stringify(params), Qs.stringify(data)].join('&');
 }
 
-function addPendingRequest(config) {
+function addPendingRequest(config: AxiosRequestConfig) {
   const requestKey = generateReqKey(config);
   // eslint-disable-next-line no-param-reassign
   config.cancelToken = config.cancelToken
@@ -22,7 +22,7 @@ function addPendingRequest(config) {
         });
 }
 
-function removePendingRequest(config) {
+function removePendingRequest(config: AxiosRequestConfig) {
   const requestKey = generateReqKey(config);
   if (pendingRequest.has(requestKey)) {
     const cancel = pendingRequest.get(requestKey);
@@ -37,7 +37,7 @@ const http = axios.create({
   xsrfCookieName: 'X-CSRFToken',
   baseURL: window.PROJECT_CONFIG?.SITE_URL || '',
 });
-const executeError = (error) => {
+const executeError = (error: AxiosError) => {
   let isShowNormalError = true;
   const hideNormalError = (status = false) => isShowNormalError = status;
   const timer = setTimeout(() => {
@@ -59,12 +59,12 @@ http.interceptors.request.use((_config: AxiosRequestConfig) => {
     config.headers = {};
   }
   if (!['HEAD', 'OPTIONS', 'TRACE'].includes(`${config.method}`.toUpperCase())) {
-    config.headers['X-CSRFToken'] = jsCookies.get(window.csrf_cookie_name);
+    config.headers['X-CSRFToken'] = getCookie(window.csrf_cookie_name) || '';
   }
   config.headers['X-Requested-With'] = 'XMLHttpRequest';
   // config.url = window.PROJECT_CONFIG.SITE_URL + _config.url;
   return config;
-}, (error) => {
+}, (error: AxiosError) => {
   const errorInfo = executeError(error);
   return Promise.reject(errorInfo);
 });
