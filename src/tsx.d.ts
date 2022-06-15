@@ -1,3 +1,5 @@
+// import $i18n from 'vue-i18n';
+
 export {}; // 必须保留
 declare global {
   interface Window {
@@ -17,6 +19,7 @@ declare global {
       MEMBER_URL?: string
     }
     VISION_AJAX_URL_PREFIX: string,
+    // i18n: $i18n
   }
 }
 declare module '@vue/runtime-core' {
