@@ -8,7 +8,6 @@ import config from './env'
 console.log(process.env.PORT)
 export default ({ mode }) => {
     const env = config[mode]
-    debugger
     return defineConfig({
         plugins: [
             vue(),
@@ -35,12 +34,12 @@ export default ({ mode }) => {
             port: Number(env.PORT || 9000),
             proxy: {
                 '/api/': {
-                    target: env.AJAX_URL_PREFIX,
+                    target: env.AJAX_URL_PROXY,
                     ws: false,
                     changeOrigin: true,
                 },
                 '/user/': {
-                    target: env.AJAX_URL_PREFIX,
+                    target: env.AJAX_URL_PROXY,
                     ws: false,
                     changeOrigin: true,
                 }

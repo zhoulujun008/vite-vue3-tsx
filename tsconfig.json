@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -18,9 +19,9 @@
       "esnext",
       "dom"
     ],
-    "outDir": "dist",
-    "rootDir": "./",
-    "baseUrl": "./",
+//    "outDir": "dist",
+//    "rootDir": "./",
+//    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],

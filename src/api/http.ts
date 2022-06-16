@@ -1,8 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import Qs from 'querystring';
 import { getCookie } from '@/utils/utils';
-import { Message as $Message } from 'bkui-vue';
-
+import { Message } from 'bkui-vue';
+import Qs from 'qs';
 
 const pendingRequest = new Map();
 
@@ -15,11 +14,11 @@ function addPendingRequest(config: AxiosRequestConfig) {
   const requestKey = generateReqKey(config);
   // eslint-disable-next-line no-param-reassign
   config.cancelToken = config.cancelToken
-        || new axios.CancelToken((cancel) => {
-          if (!pendingRequest.has(requestKey)) {
-            pendingRequest.set(requestKey, cancel);
-          }
-        });
+      || new axios.CancelToken((cancel) => {
+        if (!pendingRequest.has(requestKey)) {
+          pendingRequest.set(requestKey, cancel);
+        }
+      });
 }
 
 function removePendingRequest(config: AxiosRequestConfig) {
@@ -42,16 +41,16 @@ const executeError = (error: AxiosError) => {
   const hideNormalError = (status = false) => isShowNormalError = status;
   const timer = setTimeout(() => {
     if (isShowNormalError) {
-      $Message(error.message);
+      Message(error.message);
     }
     clearTimeout(timer);
   }, 100);
   return { ...error, hideNormalError };
 };
 http.interceptors.request.use((_config: AxiosRequestConfig) => {
-  const config = _config;
+  const config: AxiosRequestConfig = _config;
   if (!config) {
-    return null;
+    return  null;
   }
   removePendingRequest(config); // 检查是否存在重复请求，若存在则取消已发的请求
   addPendingRequest(config); // 把当前请求添加到pendingRequest对象中
@@ -72,10 +71,8 @@ http.interceptors.request.use((_config: AxiosRequestConfig) => {
 function login() {
   // window.location.href = response.data.login_url;
   // pending的promise，中止promise链
-  new Promise(() => {
-  });
+  new Promise(() => {});
 }
-
 http.interceptors.response.use((res: AxiosResponse) => {
   removePendingRequest(res.config); // 从pendingRequest对象中移除请求
   if (res.status === 200) {
@@ -88,8 +85,9 @@ http.interceptors.response.use((res: AxiosResponse) => {
         }
         return Promise.resolve(response.data);
       case 401:
-        return login();
-      default: {
+        return  login();
+      default:
+      {
         const errorInfo = executeError(response);
         return Promise.reject(errorInfo);
       }

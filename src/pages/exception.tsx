@@ -6,9 +6,9 @@ export default defineComponent({
     msg: String,
   },
   render() {
-    return () => (
+    return (
         <Exception class='exception-wrap-item' type={this.type}>
-          <span>{this.msg}</span>
+            <span>{this.msg}</span>
         </Exception>
     );
   },
