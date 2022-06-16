@@ -3,7 +3,6 @@ import {  useRoute } from 'vue-router';
 import Navigation from '../../components/navigation';
 
 export default defineComponent({
-
   setup() {
     const route = useRoute();
     let { isHideNav } = route.meta;
