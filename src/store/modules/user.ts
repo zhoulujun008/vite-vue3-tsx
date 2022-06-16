@@ -32,7 +32,7 @@ class User extends VuexModule {
     getUerInfo().then(({ permissions, avatar, username, spaces }: UserInfoRes) => {
       this.context.commit('setUser', { username, avatar });
       this.context.commit('setPermissions', permissions || {});
-      this.context.commit('setSpaces', spaces);
+      this.context.commit('setSpace', spaces);
     });
   }
 
