@@ -11,4 +11,3 @@ window.bkVisionApp = createApp(App)
   .use(i18n)
   .mount('#app');
 
-
