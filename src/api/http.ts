@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { getCookie } from '@/utils/utils';
 import { Message } from 'bkui-vue';
-import Qs from 'qs';
+import  Qs from 'qs';
 
 const pendingRequest = new Map();
 
