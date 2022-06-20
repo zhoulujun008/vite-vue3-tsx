@@ -1742,6 +1742,11 @@
     "string.prototype.trimstart" "^1.0.4"
     "unbox-primitive" "^1.0.1"
 
+"es-module-lexer@^0.6.0":
+  "integrity" "sha512-f8kcHX1ArhllUtb/wVSyvygoKCznIjnxhLxy7TCvIiMdT7fL4ZDTIKaadMe6eLvOXg6Wk02UeoFgUoZ2EKZZUA=="
+  "resolved" "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.6.0.tgz"
+  "version" "0.6.0"
+
 "es-module-lexer@^0.9.0", "es-module-lexer@^0.9.3":
   "integrity" "sha512-1HQ2M2sPtxwnvOvT1ZClHyQDiggdNjURWpY2we6aMKCQiUVxTmVs2UYPLIrD84sS+kMdUwfBSylbJPwNnBrnHQ=="
   "resolved" "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz"
@@ -4447,6 +4452,13 @@
     "is-buffer" "^2.0.0"
     "unist-util-stringify-position" "^2.0.0"
     "vfile-message" "^2.0.0"
+
+"vite-plugin-dynamic-publicpath@^1.1.2":
+  "integrity" "sha512-oZpGyNviJQ6cBJizvjuqp+gVj4H3NphSm5ipP1N3AeRTzCMbwix9kvlbwNnRXLJh3FiE53s4beKIlS6w6/gGXQ=="
+  "resolved" "https://registry.npmjs.org/vite-plugin-dynamic-publicpath/-/vite-plugin-dynamic-publicpath-1.1.2.tgz"
+  "version" "1.1.2"
+  dependencies:
+    "es-module-lexer" "^0.6.0"
 
 "vite-plugin-style-import@^2.0.0":
   "integrity" "sha512-qtoHQae5dSUQPo/rYz/8p190VU5y19rtBaeV7ryLa/AYAU/e9CG89NrN/3+k7MR8mJy/GPIu91iJ3zk9foUOSA=="
