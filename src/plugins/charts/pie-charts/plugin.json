@@ -1,0 +1,12 @@
+{
+  "type": "pie-charts",
+  "name": "饼图",
+  "id": "pie-charts",
+  "build_in": true,
+  "data_type": "row",
+  "meta": {
+    "description": "Data source for MySQL databases",
+    "author": "liangling",
+    "logo": "img/logo.svg"
+  }
+}

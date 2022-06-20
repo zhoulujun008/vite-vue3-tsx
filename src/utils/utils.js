@@ -1,7 +1,7 @@
 /**
  * 原GEM项目utils复用函数
  */
-import deepmerge from 'deepmerge';
+import { cloneDeep } from 'lodash';
 /**
  * 获取Cookie
  * @param {String} name
@@ -17,9 +17,8 @@ export const getCookie = (name) => {
 /**
  * 深拷贝
  * @param {Object} obj
- * @param {object} hash
  */
-export const deepClone = (obj, hash = {}) => deepmerge(obj, hash);
+export const deepClone = obj => cloneDeep(obj);
 
 /**
  * 命名转换

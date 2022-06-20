@@ -27,16 +27,17 @@
     "build:vue": "vite build --mode vue"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.182",
     "axios": "^0.27.2",
     "bkui-vue": "^0.0.1-beta.106",
     "classnames": "^2.3.1",
     "dayjs": "^1.11.3",
-    "deepmerge": "^4.2.2",
     "echarts": "^5.3.3",
     "echarts-wordcloud": "^2.0.0",
     "helpful-decorators": "^2.1.0",
     "js-cookie": "^3.0.1",
     "js-watermarker": "^2.0.2",
+    "lodash": "^4.17.21",
     "qs": "^6.10.5",
     "tiny-emitter": "^2.1.0",
     "tvision-color": "^1.4.0",

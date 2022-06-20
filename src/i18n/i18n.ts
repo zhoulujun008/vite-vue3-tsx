@@ -14,7 +14,7 @@ if (currentLang === 'en') {
 }
 const i18n = createI18n({
   locale: getCookie('blueking_language') || 'zh-cn',
-  fallbackLocale: 'zh-cn',// 设置备用语言
+  fallbackLocale: 'zh-cn', // 设置备用语言
   silentTranslationWarn: true,
   globalInjection: true,
   messages: {
