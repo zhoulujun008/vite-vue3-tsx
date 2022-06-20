@@ -1,4 +1,4 @@
-const config = {
+const config:Record<string, any> = {
     production: {
         NODE_ENV: JSON.stringify('production'),
         publicPath:'{{ BK_STATIC_URL }}',// 静态资源路径前缀

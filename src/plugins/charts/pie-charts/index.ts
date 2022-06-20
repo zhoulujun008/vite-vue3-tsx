@@ -1,6 +1,7 @@
+import { defineAsyncComponent } from 'vue';
 import meta from './plugin.json';
-const ChartPanel = async () => await import('./components/chart-panel');
-const PropsPanel = async () => await import('./components/props-panel');
+const ChartPanel = defineAsyncComponent(() =>  import('./components/chart-panel'));
+const PropsPanel =  defineAsyncComponent(() => import('./components/props-panel'));
 export default {
   ChartPanel,
   PropsPanel,

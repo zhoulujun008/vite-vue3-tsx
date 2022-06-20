@@ -12,6 +12,14 @@ const routes: RouteRecordRaw[] = [
     redirect: '/home',
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('@/pages/test/index'),
+    meta: {
+      parent: 'test',
+    },
+  },
+  {
     path: '/space',
     name: 'space',
     component: () => import('@/pages/space/index'),

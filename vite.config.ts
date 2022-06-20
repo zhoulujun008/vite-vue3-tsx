@@ -6,7 +6,7 @@ import { createStyleImportPlugin } from 'vite-plugin-style-import';
 import config from './env'
 // https://vitejs.dev/config/
 console.log(process.env.PORT)
-export default ({ mode }) => {
+export default ({ mode ='develop' }) => {
     const env = config[mode]
     return defineConfig({
         plugins: [
