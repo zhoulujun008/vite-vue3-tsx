@@ -2,9 +2,6 @@ import { defineComponent, ref } from 'vue';
 import CustomSwitch from '@/components/CustomSwitch/CustomSwitch';
 
 export default defineComponent({
-  components: {
-    CustomSwitch,
-  },
   setup() {
     const flag = ref(false);
     return {

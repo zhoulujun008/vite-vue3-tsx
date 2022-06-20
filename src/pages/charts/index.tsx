@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import chartWrap from '@/components/chart-wrap';
+import ChartWrap from '@/components/chart-wrap';
 
 export default defineComponent({
   name: 'Charts',
@@ -10,7 +10,7 @@ export default defineComponent({
     return (
       <div>
         <div>22</div>
-        <div>{chartWrap}</div>
+        <div>{ChartWrap}</div>
       </div>
     );
   },
