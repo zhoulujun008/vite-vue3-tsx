@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createStyleImportPlugin } from 'vite-plugin-style-import';
-import { useDynamicPublicPath } from 'vite-plugin-dynamic-publicpath'
+// import { useDynamicPublicPath } from 'vite-plugin-dynamic-publicpath'
 import config from './env'
 // https://vitejs.dev/config/
 console.log(process.env.PORT)
@@ -28,10 +28,10 @@ export default ({ mode = 'develop' }) => {
           },
         ],
       }),
-      useDynamicPublicPath({
-        dynamicImportHandler: 'window.PROJECT_CONFIG.BK_STATIC_URL',
-        dynamicImportPreload: 'window.PROJECT_CONFIG.BK_STATIC_URL'
-      }),
+      // useDynamicPublicPath({
+      //   dynamicImportHandler: 'window.PROJECT_CONFIG.BK_STATIC_URL',
+      //   dynamicImportPreload: 'window.PROJECT_CONFIG.BK_STATIC_URL'
+      // }),
     ],
     /**
      * Base public path when served in production.
