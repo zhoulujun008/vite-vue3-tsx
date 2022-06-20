@@ -37,6 +37,23 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/home'),
     children: [
       {
+        path: 'library',
+        name: 'library',
+        component: () =>  import(/* webpackChunkName: "libraryPage" */ '@/pages/library'),
+        redirect: { name: 'charts' },
+        children: [
+          {
+            path: 'charts',
+            name: 'charts',
+            component: () => import(/* webpackChunkName: "chartsPage" */ '@/pages/charts'),
+            // component: DataSource,
+            meta: {
+              parent: 'library',
+            },
+          },
+        ],
+      },
+      {
         path: 'dashboards/detail',
         name: 'dashboard',
         component: () => import('@/pages/dashboard/index'),
@@ -62,6 +79,7 @@ const routes: RouteRecordRaw[] = [
     name: '404',
     component: () => import('@/pages/403'),
   },
+
 ];
 
 const router = createRouter({
