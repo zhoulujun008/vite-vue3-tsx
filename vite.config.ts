@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createStyleImportPlugin } from 'vite-plugin-style-import';
+import path from 'path'
 // import { useDynamicPublicPath } from 'vite-plugin-dynamic-publicpath'
 import config from './env'
 // https://vitejs.dev/config/
@@ -75,12 +76,19 @@ export default ({ mode = 'develop' }) => {
         '@modules': resolve(__dirname, './src/store/modules'),
       }
     },
-    build: {
-      assetsDir: 'assets', // 指定生成静态资源的存放路径
-      // rollupOptions:{
-      //
-      // }
-    }
+    // build: {
+    //   assetsDir: 'assets', // 指定生成静态资源的存放路径
+    //   rollupOptions:{
+    //     input: {
+    //       index: path.resolve(__dirname, 'config/index.html'),
+    //     },
+    //     output: {
+    //       chunkFileNames: 'static/js/[name]-[hash].js',
+    //       entryFileNames: 'static/js/[name]-[hash].js',
+    //       assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+    //     }
+    //   }
+    // }
   })
 }
 

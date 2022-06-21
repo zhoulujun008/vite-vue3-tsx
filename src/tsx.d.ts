@@ -18,7 +18,6 @@ declare global {
       MEMBER_URL?: string
     }
     VISION_AJAX_URL_PREFIX: string,
-    // i18n: $i18n
   }
 }
 declare module '@vue/runtime-core' {
