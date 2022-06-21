@@ -34,8 +34,8 @@ const config:Record<string, any> = {
         outputDir: __dirname + '/dist',
         assetsDir: './',
         AJAX_URL_PREFIX: '',
-        AJAX_URL_PROXY: 'http://stag-dot-bkvision.bkapps-sz.oa.com/',
-        HOST: 'dev.bkapps.oa.com',
+        AJAX_URL_PROXY: 'dev.zhoulujun.co/api',
+        HOST: 'dev.zhoulujun.co',
         PORT: 9003
     },
 };

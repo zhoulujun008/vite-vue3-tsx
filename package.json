@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "vite --host=dev.bkapps.oa.com --port=9003",
+    "start": "vite --host=dev.zhoulujun.co --port=9003",
     "dev": "vite --mode development",
     "serve": "vite preview --port=9004",
     "lint": "eslint src",
